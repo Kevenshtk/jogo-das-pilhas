@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jogo das Pilhas - Lógica de Programação</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+</head>
+
+<body>
+  <img class="fundoE" src="./img/Esquerda.png" alt="">
+  <img class="fundoD" src="./img/Direita.png" alt="">
+
+  <section id="telaInicio" >
+    <h1>Jogo das Pilhas</h1>
+
+    <button class="btn btn-modo-jogo" onclick="iniciarJogo(1)">Descubra a Pilha</button>
+    <button class="btn btn-modo-jogo" onclick="iniciarJogo(2)">Monte a Pilha</button>
+    <button class="btn btn-manual" onclick="montarTelaManual()">Como Jogar?</button>
+  </section>
+
+  <section id="telaDificuldade">
+    <h1 class="titulo"></h1>
+    <p class="instrucao">Selecione uma dificuldade!</p>
+    <div class="btns-dificuldade">
+      <button id="nivel-0" onclick="salvarDificuldade(0)">LIVRE</button>
+      <button id="nivel-1" onclick="salvarDificuldade(1)">IGUAL</button>
+      <button id="nivel-2" onclick="salvarDificuldade(2)">MAIOR e MENOR</button>
+      <button id="nivel-3" onclick="salvarDificuldade(3)">E <br/>(igual)</button>
+      <button id="nivel-4" onclick="salvarDificuldade(4)">OU <br/>(igual) </button>
+      <button id="nivel-5" onclick="salvarDificuldade(5)">E, OU <br/>(Maior e Menor)</button>
+    </div>
+
+    <div class="info">
+      <h2 class="info-titulo"></h2>
+      <p class="info-desc"></p>
+    </div>
+
+    <button class="btn btn-jogar">Jogar</button>
+  </section>
+
+  <section id="telaJogo">
+    <button class="btn btn-voltar-inicio"><i class="fa-solid fa-chevron-left"></i></button>
+    <button class="btn btn-info"><i class="fa-solid fa-info"></i></button>
+
+    <h1 class="titulo"></h1>
+    <p class="instrucao"></p>
+
+    <div class="container-pilhas">
+      <div id="principal" class="pilha"></div>
+      <div id="secundaria" class="pilha">
+        <img src="./img/01.png" id="1" class="azul losango txt-branco continuo num-impar">
+        <img src="./img/02.png" id="2" class="vermelho pentagono txt-branco potilhado num-par">
+        <img src="./img/03.png" id="3" class="verde hexagono txt-branco continuo num-impar">
+        <img src="./img/04.png" id="4" class="amarelo circulo txt-branco continuo num-par">
+        <img src="./img/05.png" id="5" class="rosa quadrado txt-branco potilhado num-impar">
+        <img src="./img/06.png" id="6" class="azul triangulo txt-preto potilhado num-par">
+        <img src="./img/07.png" id="7" class="vermelho losango txt-preto continuo num-impar">
+        <img src="./img/08.png" id="8" class="verde pentagono txt-preto continuo num-par">
+        <img src="./img/09.png" id="9" class="amarelo hexagono txt-preto potilhado num-impar">
+        <img src="./img/10.png" id="10" class="rosa circulo txt-preto continuo num-par">
+        <img src="./img/11.png" id="11" class="azul quadrado txt-branco continuo num-impar">
+        <img src="./img/12.png" id="12" class="vermelho triangulo txt-branco continuo num-par">
+        <img src="./img/13.png" id="13" class="verde losango txt-branco potilhado num-impar">
+        <img src="./img/14.png" id="14" class="amarelo pentagono txt-branco continuo num-par">
+        <img src="./img/15.png" id="15" class="rosa hexagono txt-branco continuo num-impar">
+        <img src="./img/16.png" id="16" class="azul circulo txt-preto continuo num-par">
+        <img src="./img/17.png" id="17" class="vermelho quadrado txt-preto potilhado num-impar">
+        <img src="./img/18.png" id="18" class="verde triangulo txt-preto continuo num-par">
+        <img src="./img/19.png" id="19" class="amarelo losango txt-preto continuo num-impar">
+        <img src="./img/20.png" id="20" class="rosa pentagono txt-preto potilhado num-par">
+        <img src="./img/21.png" id="21" class="azul hexagono txt-branco potilhado num-impar">
+        <img src="./img/22.png" id="22" class="vermelho circulo txt-branco continuo num-par">
+        <img src="./img/23.png" id="23" class="verde quadrado txt-branco continuo num-impar">
+        <img src="./img/24.png" id="24" class="amarelo triangulo txt-branco potilhado num-par">
+        <img src="./img/25.png" id="25" class="rosa losango txt-branco continuo num-impar">
+        <img src="./img/26.png" id="26" class="azul pentagono txt-preto continuo num-par">
+        <img src="./img/27.png" id="27" class="vermelho hexagono txt-preto continuo num-impar">
+        <img src="./img/28.png" id="28" class="verde circulo txt-preto potilhado num-par">
+        <img src="./img/29.png" id="29" class="amarelo quadrado txt-preto continuo num-impar">
+        <img src="./img/30.png" id="30" class="rosa triangulo txt-preto continuo num-par">
+      </div>
+    </div>
+
+    <button class="btn btn-responder"></button>
+    <button class="btn-abrir-modal">Mostrar Condição</button>
+
+    <div id="modal" class="modal">
+      <div class="modal-content">
+        <span class="btn-fechar-modal">&times;</span>
+        <div class="modal-condicao">
+          <h2 class="modal-titulo"></h2>
+          <div class="alternativas"></div>
+        </div>
+
+        <div class="modal-manual">
+          <h2 class="modal-titulo"></h2>
+          <ul>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="telaManual">
+    <button class="btn btn-voltar-inicio"><i class="fa-solid fa-chevron-left"></i></button>
+    <h1 class="titulo">Jogo das Pilhas</h1>
+    <p class="instrucao">O jogo tem 30 figuras únicas, cada uma com características diferentes
+      (cor, forma, número, cor da escrita e sublinhado). Existem dois modos
+      de jogar:
+    </p>
+    <div id="descubra">
+      <h2>DESCUBRA A PILHA</h2>
+      <ul>
+        <li>As figuras são separadas em duas pilhas:
+          <li class="decoracao">Pilha da esquerda: segue uma lógica secreta.</li>
+          <li class="decoracao">Pilha da direita: são as figuras que não seguem essa lógica</li>
+        </li>
+        <li>Seu objetivo é descobrir qual foi a regra usada para montar a pilha da
+          esquerda.</li>
+        <li>Quando achar que sabe a resposta, clique em Responder: vão
+          aparecer 4 opções de lógica para escolher.</li>
+        <li>Se errar, pode tentar de novo até acertar.</li>
+      </ul>
+    </div>
+
+    <div id="monte">
+      <h2>MONTE A PILHA</h2>
+      <ul>
+        <li>Todas as 30 figuras começam na pilha da direita.</li>
+        <li>Uma lógica será revelada para você, e seu desafio é mover para a
+          pilha da esquerda todas as figuras que seguem essa regra.</li>
+        <li>Quando terminar, clique em Verificar para conferir se acertou.</li>
+        <li>Caso tenha errado, pode ajustar e tentar novamente até completar.</li>
+      </ul>
+    </div>
+  </section>
+
+  <script type="module" src="index.js"></script>
+</body>
+
+</html>
