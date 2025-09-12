@@ -1,6 +1,6 @@
 @font-face {
   font-family: "ArialRounded";
-  src: url("./docs/ARLRDBD.ttf") format("truetype");
+  src: url("../assets/font/ARLRDBD.TTF") format("truetype");
 }
 
 body {
