@@ -149,8 +149,8 @@ body {
 }
 
 .pilha {
-  width: 350px;
-  height: 500px;
+  width: 450px;
+  height: 650px;
   display: flex;
   flex-wrap: wrap;
   align-content: flex-start;
