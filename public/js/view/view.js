@@ -1,55 +1,53 @@
 import {
   getNivelDificuldadeAnterior,
   setNivelDificuldadeAnterior,
-  getNivelDificuldade,
   setNivelDificuldade,
   selecionarRegra,
   gerarAlternativas,
-  getRegraAtual,
   checarSeparacao,
 } from "../controller/controller.js";
 
 let draggedItem = null;
 
-function inicializarDragAndDrop() {
+function inicializarArrastar() {
   const imgs = document.querySelectorAll("img");
   imgs.forEach((img) => {
-    img.addEventListener("dragstart", dragStart);
-    img.addEventListener("dragend", dragEnd);
+    img.addEventListener("dragstart", getImgArrastar);
+    img.addEventListener("dragend", removerImgArrastar);
   });
 
   [pilhaPrincipal, pilhaSecundaria].forEach((pilha) => {
-    pilha.addEventListener("dragover", dragOver);
-    pilha.addEventListener("dragenter", dragEnter);
-    pilha.addEventListener("dragleave", dragLeave);
-    pilha.addEventListener("drop", drop);
+    pilha.addEventListener("dragover", aceitarImgArrastar);
+    pilha.addEventListener("dragenter", addClassDestaque);
+    pilha.addEventListener("dragleave", removerClassDestaque);
+    pilha.addEventListener("drop", addImgPilhaPrincipal);
   });
 }
 
-function dragStart(e) {
+function getImgArrastar(e) {
   draggedItem = e.target;
   draggedItem.classList.add("dragging");
 }
 
-function dragEnd(e) {
+function removerImgArrastar(e) {
   draggedItem.classList.remove("dragging");
   draggedItem = null;
 }
 
-function dragOver(e) {
+function aceitarImgArrastar(e) {
   e.preventDefault();
 }
 
-function dragEnter(e) {
+function addClassDestaque(e) {
   e.preventDefault();
   this.classList.add("over");
 }
 
-function dragLeave(e) {
+function removerClassDestaque(e) {
   this.classList.remove("over");
 }
 
-function drop(e) {
+function addImgPilhaPrincipal(e) {
   this.classList.remove("over");
   if (draggedItem) {
     this.appendChild(draggedItem);
@@ -327,7 +325,7 @@ function iniciarRodada(modo) {
   } else {
     btnAbrirModal.style.display = "block";
 
-    inicializarDragAndDrop();
+    inicializarArrastar();
   }
 
   montarModalCondicao(modo, regraAtual);
