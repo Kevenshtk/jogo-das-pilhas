@@ -4,7 +4,7 @@ import {
   regrasEigual,
   regrasOuIgual,
   regrasEouMaiorMenor,
-} from "./regras.js";
+} from "./model/regras.js";
 
 let regraAtual = null;
 
