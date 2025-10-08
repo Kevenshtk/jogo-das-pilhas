@@ -8,6 +8,20 @@
     font-size: 65px;
   }
 
+   #telaDificuldade {
+    height: 100dvh;
+    width: 100%;
+   }
+
+  #telaDificuldade .titulo {
+    font-size: 50px;
+  }
+
+  #telaDificuldade .info {
+    height: 180px;
+    margin: 25px 0;
+  }
+
   .btn-modo-jogo,
   .btn-manual {
     width: 200px;
@@ -32,6 +46,15 @@
     width: 35px;
     height: 35px;
     font-size: 1rem;
+  }
+
+  .btns-dificuldade {
+    width: 300px;
+    margin-top: 25px;
+  }
+
+  .btn-jogar {
+    font-size: 16px;
   }
 
   #telaManual {
