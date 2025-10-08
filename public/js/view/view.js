@@ -63,10 +63,12 @@ function voltarInicio() {
   const telaInicio = document.getElementById("telaInicio");
   const telaJogo = document.getElementById("telaJogo");
   const telaManual = document.getElementById("telaManual");
+  const telaDificuldade = document.getElementById("telaDificuldade");
 
   telaInicio.style.display = "flex";
   telaJogo.style.display = "none";
   telaManual.style.display = "none";
+  telaDificuldade.style.display = "none";
 }
 
 function montarTelaManual() {
@@ -84,6 +86,9 @@ function montarTelaDificuldade(modo) {
 
   const titulo = document.querySelector("#telaDificuldade > .titulo");
   titulo.textContent = modo === 1 ? "Descubra a Pilha" : "Monte a Pilha";
+
+  const btnVoltar = document.querySelector("#telaDificuldade > .btn-voltar-inicio");
+  btnVoltar.onclick = voltarInicio;
 }
 
 function alterarLegendaDificuldade(nivel) {

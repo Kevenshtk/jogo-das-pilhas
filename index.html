@@ -14,9 +14,9 @@
   <img class="fundoD" src="public/assets/img/background/Direita.png" alt="imagem fundo direita">
 
 
-  <audio id="player" src="public/assets/sounds/fundo.mpeg" loop="true"></audio>
+  <audio id="player" src="public/assets/sounds/fundo.mpeg" loop="true" autoplay></audio>
 
-  <button class="btn-play-pause"><i class="fa-solid fa-play"></i></button>
+  <button class="btn-play-pause"><i class="fa-solid fa-pause"></i></button>
 
   <section id="telaInicio" >
     <h1>Jogo das Pilhas</h1>
@@ -27,8 +27,11 @@
   </section>
 
   <section id="telaDificuldade">
+    <button class="btn btn-voltar-inicio"><i class="fa-solid fa-chevron-left"></i></button>
+    
     <h1 class="titulo"></h1>
     <p class="instrucao">Selecione uma dificuldade!</p>
+
     <div class="btns-dificuldade">
       <button id="nivel-0" onclick="salvarDificuldade(0)">LIVRE</button>
       <button id="nivel-1" onclick="salvarDificuldade(1)">IGUAL</button>
