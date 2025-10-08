@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Jogo das Pilhas - Lógica de Programação</title>
   <link rel="stylesheet" href="public/css/style.css">
+  <link rel="stylesheet" href="public/css/respon.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
 </head>
 
@@ -119,31 +120,32 @@
       (cor, forma, número, cor da escrita e sublinhado). Existem dois modos
       de jogar:
     </p>
-    <div id="descubra">
-      <h2>DESCUBRA A PILHA</h2>
-      <ul>
-        <li>As figuras são separadas em duas pilhas:
-          <li class="decoracao">Pilha da esquerda: segue uma lógica secreta.</li>
-          <li class="decoracao">Pilha da direita: são as figuras que não seguem essa lógica</li>
-        </li>
-        <li>Seu objetivo é descobrir qual foi a regra usada para montar a pilha da
-          esquerda.</li>
-        <li>Quando achar que sabe a resposta, clique em Responder: vão
-          aparecer 4 opções de lógica para escolher.</li>
-        <li>Se errar, pode tentar de novo até acertar.</li>
-      </ul>
-    </div>
-
-    <div id="monte">
-      <h2>MONTE A PILHA</h2>
-      <ul>
-        <li>Todas as 30 figuras começam na pilha da direita.</li>
-        <li>Uma lógica será revelada para você, e seu desafio é mover para a
-          pilha da esquerda todas as figuras que seguem essa regra.</li>
-        <li>Quando terminar, clique em Verificar para conferir se acertou.</li>
-        <li>Caso tenha errado, pode ajustar e tentar novamente até completar.</li>
-      </ul>
-    </div>
+    <section>
+      <div id="descubra">
+        <h2>DESCUBRA A PILHA</h2>
+        <ul>
+          <li>As figuras são separadas em duas pilhas:
+            <li class="decoracao">Pilha da esquerda: segue uma lógica secreta.</li>
+            <li class="decoracao">Pilha da direita: são as figuras que não seguem essa lógica</li>
+          </li>
+          <li>Seu objetivo é descobrir qual foi a regra usada para montar a pilha da
+            esquerda.</li>
+          <li>Quando achar que sabe a resposta, clique em Responder: vão
+            aparecer 4 opções de lógica para escolher.</li>
+          <li>Se errar, pode tentar de novo até acertar.</li>
+        </ul>
+      </div>
+      <div id="monte">
+        <h2>MONTE A PILHA</h2>
+        <ul>
+          <li>Todas as 30 figuras começam na pilha da direita.</li>
+          <li>Uma lógica será revelada para você, e seu desafio é mover para a
+            pilha da esquerda todas as figuras que seguem essa regra.</li>
+          <li>Quando terminar, clique em Verificar para conferir se acertou.</li>
+          <li>Caso tenha errado, pode ajustar e tentar novamente até completar.</li>
+        </ul>
+      </div>
+    </section>
   </section>
 
   <script type="module" src="public/js/index.js"></script>
