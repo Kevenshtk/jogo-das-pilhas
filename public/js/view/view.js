@@ -331,6 +331,31 @@ function iniciarRodada(modo) {
   montarModalCondicao(modo, regraAtual);
 }
 
+function efeitoSonoroClick(caminhoSom) {
+  const audio = new Audio(caminhoSom);
+  audio.play();
+}
+
+document.querySelectorAll("button").forEach((btn) => {
+  btn.addEventListener("click", () => {
+    efeitoSonoroClick("public/assets/sounds/sound-5.mp3");
+  });
+});
+
+const player = document.querySelector("#player");
+player.volume = 0.1;
+
+const btnPlayPause = document.querySelector(".btn-play-pause");
+btnPlayPause.addEventListener("click", () => {
+  if (player.paused) {
+    player.play();
+    btnPlayPause.innerHTML = `<i class="fa-solid fa-pause"></i>`;
+  } else {
+    player.pause();
+    btnPlayPause.innerHTML = `<i class="fa-solid fa-play"></i>`;
+  }
+});
+
 export {
   esconderTela,
   montarTelaManual,
