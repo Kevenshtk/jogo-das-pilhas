@@ -15,7 +15,7 @@
   <img class="fundoD" src="public/assets/img/background/Direita.png" alt="imagem fundo direita">
 
 
-  <audio id="player" src="public/assets/sounds/fundo.mpeg" loop="true" autoplay></audio>
+  <audio id="player" src="public/assets/sounds/fundo.mpeg" loop="true"></audio>
 
   <button class="btn-play-pause"><i class="fa-solid fa-pause"></i></button>
 
@@ -58,6 +58,8 @@
     <p class="instrucao"></p>
 
     <div class="container-pilhas">
+      <button class="btn-pilha-principal"><i class="fa-solid fa-chevron-left"></i></button>
+
       <div id="principal" class="pilha"></div>
       <div id="secundaria" class="pilha">
         <img src="public/assets/img/formas/01.png" id="1" class="azul losango txt-branco continuo num-impar">
@@ -91,10 +93,12 @@
         <img src="public/assets/img/formas/29.png" id="29" class="amarelo quadrado txt-preto continuo num-impar">
         <img src="public/assets/img/formas/30.png" id="30" class="rosa triangulo txt-preto continuo num-par">
       </div>
+
+      <button class="btn-pilha-secundaria"><i class="fa-solid fa-chevron-right"></i></button>
     </div>
 
     <button class="btn btn-responder"></button>
-    <button class="btn-abrir-modal">Mostrar Condição</button>
+    <button class="btn-abrir-modal"></button>
 
     <div id="modal" class="modal">
       <div class="modal-content">

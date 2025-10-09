@@ -11,6 +11,16 @@ let regraAtual = null;
 let nivelAnterior = 0;
 let nivelSelecionado;
 
+let mododejogo = 0;
+
+function getMododejogo() {
+  return mododejogo;
+}
+
+function setMododejogo(modo) {
+  mododejogo = modo;
+}
+
 function getRegras(nivel) {
   switch (nivel) {
     case 0:
@@ -105,10 +115,12 @@ function checarSeparacao(resposta, imagensOriginais) {
     resposta.length === idsCorretos.length &&
     resposta.every((id) => idsCorretos.includes(id));
 
-    return acertou;
+  return acertou;
 }
 
 export {
+  getMododejogo,
+  setMododejogo,
   getNivelDificuldadeAnterior,
   setNivelDificuldadeAnterior,
   getNivelDificuldade,

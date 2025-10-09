@@ -1,4 +1,5 @@
 import {
+  getMododejogo,
   getNivelDificuldadeAnterior,
   setNivelDificuldadeAnterior,
   setNivelDificuldade,
@@ -6,6 +7,8 @@ import {
   gerarAlternativas,
   checarSeparacao,
 } from "../controller/controller.js";
+
+import { isMobileDevice } from "../utils/index.js";
 
 let draggedItem = null;
 
@@ -49,6 +52,7 @@ function removerClassDestaque(e) {
 
 function addImgPilhaPrincipal(e) {
   this.classList.remove("over");
+
   if (draggedItem) {
     this.appendChild(draggedItem);
   }
@@ -87,7 +91,9 @@ function montarTelaDificuldade(modo) {
   const titulo = document.querySelector("#telaDificuldade > .titulo");
   titulo.textContent = modo === 1 ? "Descubra a Pilha" : "Monte a Pilha";
 
-  const btnVoltar = document.querySelector("#telaDificuldade > .btn-voltar-inicio");
+  const btnVoltar = document.querySelector(
+    "#telaDificuldade > .btn-voltar-inicio"
+  );
   btnVoltar.onclick = voltarInicio;
 }
 
@@ -159,8 +165,10 @@ function abrirModal(opt) {
 }
 
 function fecharModal() {
+  const modo = getMododejogo();
   modal.style.display = "none";
-  btnAbrirModal.style.display = "block";
+
+  modo == 2 && (btnAbrirModal.style.display = "block");
 }
 
 function montarModalInfo(modo) {
@@ -278,6 +286,23 @@ function montarTelaJogo(modo) {
     abrirModal("condicao");
   }
 
+  if (isMobileDevice()) {
+    const btnNextPilha = document.querySelector(".btn-pilha-principal");
+    const btnBackPilha = document.querySelector(".btn-pilha-secundaria");
+    const pilhaPrincipal = document.querySelector(".container-pilhas #principal");
+    const pilhaSecundaria = document.querySelector(".container-pilhas #secundaria");
+
+    btnNextPilha.addEventListener("click", () => {
+      pilhaPrincipal.style.display = "flex";
+      pilhaSecundaria.style.display = "none";
+    });
+
+    btnBackPilha.addEventListener("click", () => {
+      pilhaPrincipal.style.display = "none";
+      pilhaSecundaria.style.display = "flex";
+    });
+  }
+
   montarModalInfo(modo);
 }
 
@@ -326,9 +351,13 @@ function iniciarRodada(modo) {
       }
     });
 
-    btnAbrirModal.style.display = "block";
+    btnAbrirModal.style.display = "none";
   } else {
     btnAbrirModal.style.display = "block";
+
+    isMobileDevice()
+      ? (btnAbrirModal.innerText = "Condição")
+      : (btnAbrirModal.innerText = "Mostrar Condição");
 
     inicializarArrastar();
   }

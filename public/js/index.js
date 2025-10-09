@@ -7,10 +7,15 @@ import {
   iniciarRodada,
 } from "./view/view.js";
 
+import {
+  setMododejogo
+} from "./controller/controller.js";
+
 salvarDificuldade(0);
 
 function iniciarJogo(modo) {
   esconderTela("telaInicio");
+  setMododejogo(modo);
   montarTelaDificuldade(modo);
 
   const btnJogar = document.querySelector("#telaDificuldade > .btn-jogar");

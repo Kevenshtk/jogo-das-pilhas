@@ -34,7 +34,7 @@ body {
   border-radius: 40%;
   transition-duration: 0.4s;
   cursor: pointer;
-  position: absolute;
+  position: fixed;
   bottom: 85px;
   right: 40px;
 }
@@ -45,7 +45,8 @@ body {
   font-size: 1rem;
 }
 
-.fa-play, .fa-pause {
+.fa-play,
+.fa-pause {
   color: #fff;
 }
 
@@ -95,7 +96,9 @@ body {
 }
 
 .btn-voltar-inicio,
-.btn-info {
+.btn-info,
+.btn-pilha-principal,
+.btn-pilha-secundaria {
   width: 45px;
   height: 45px;
   display: flex;
@@ -116,6 +119,23 @@ body {
   color: #ffff;
   right: 250px;
   top: 10px;
+}
+
+.btn-pilha-principal,
+.btn-pilha-secundaria {
+  display: none;
+  color: #fff;
+  background-color: #0000003d;
+}
+
+.btn-pilha-principal {
+  top: 50%;
+  left: 0;
+}
+
+.btn-pilha-secundaria {
+  top: 50%;
+  right: 0;
 }
 
 @media (max-width: 1024px) {
