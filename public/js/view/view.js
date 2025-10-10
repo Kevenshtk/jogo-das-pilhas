@@ -289,17 +289,28 @@ function montarTelaJogo(modo) {
   if (isMobileDevice()) {
     const btnNextPilha = document.querySelector(".btn-pilha-principal");
     const btnBackPilha = document.querySelector(".btn-pilha-secundaria");
-    const pilhaPrincipal = document.querySelector(".container-pilhas #principal");
-    const pilhaSecundaria = document.querySelector(".container-pilhas #secundaria");
+    const pilhaPrincipal = document.querySelector(
+      ".container-pilhas #principal"
+    );
+    const pilhaSecundaria = document.querySelector(
+      ".container-pilhas #secundaria"
+    );
+    const indicadorPilha = document.querySelector(
+      ".container-pilhas .tag-pilha"
+    );
+
+    indicadorPilha.innerText = "Pilha Principal";
 
     btnNextPilha.addEventListener("click", () => {
       pilhaPrincipal.style.display = "flex";
       pilhaSecundaria.style.display = "none";
+      indicadorPilha.innerText = "Pilha Principal";
     });
 
     btnBackPilha.addEventListener("click", () => {
       pilhaPrincipal.style.display = "none";
       pilhaSecundaria.style.display = "flex";
+      indicadorPilha.innerText = "Pilha Secundária";
     });
   }
 
@@ -355,11 +366,13 @@ function iniciarRodada(modo) {
   } else {
     btnAbrirModal.style.display = "block";
 
-    isMobileDevice()
-      ? (btnAbrirModal.innerText = "Condição")
-      : (btnAbrirModal.innerText = "Mostrar Condição");
-
-    inicializarArrastar();
+    if (isMobileDevice()) {
+      btnAbrirModal.innerText = "Condição";
+      
+    } else {
+      btnAbrirModal.innerText = "Mostrar Condição";
+      inicializarArrastar();
+    }
   }
 
   montarModalCondicao(modo, regraAtual);
@@ -377,7 +390,7 @@ document.querySelectorAll("button").forEach((btn) => {
 });
 
 const player = document.querySelector("#player");
-player.volume = 0.1;
+player.volume = 0.3;
 
 const btnPlayPause = document.querySelector(".btn-play-pause");
 btnPlayPause.addEventListener("click", () => {

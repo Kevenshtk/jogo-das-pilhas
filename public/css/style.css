@@ -191,6 +191,20 @@ body {
   gap: 30px;
 }
 
+.tag-pilha {
+  display: none;
+  width: 140px;
+  background: #00000056;
+  border: 2px solid #7f7f7f;
+  border-radius: 10px;
+  color: #fff;
+  text-align: center;
+  padding: 5px;
+  position: absolute;
+  top: 25%;
+  left: 30%;
+}
+
 .pilha {
   width: 450px;
   height: 650px;

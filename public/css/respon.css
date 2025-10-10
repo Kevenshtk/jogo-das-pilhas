@@ -130,4 +130,8 @@
   .container-pilhas #secundaria {
     display: none;
   }
+
+  .tag-pilha{
+    display: inline;
+  }
 }
