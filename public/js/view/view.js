@@ -58,6 +58,23 @@ function addImgPilhaPrincipal(e) {
   }
 }
 
+function inicializarClickMove() {
+  const imgs = document.querySelectorAll("#principal img, #secundaria img");
+  imgs.forEach((img) => {
+    img.addEventListener("click", moverImagem);
+  });
+}
+
+function moverImagem(e) {
+  const img = e.target;
+
+  if (pilhaSecundaria.contains(img)) {
+    pilhaPrincipal.appendChild(img);
+  } else if (pilhaPrincipal.contains(img)) {
+    pilhaSecundaria.appendChild(img);
+  }
+}
+
 function esconderTela(tela) {
   const telaSelecionada = document.getElementById(`${tela}`);
   telaSelecionada.style.display = "none";
@@ -368,7 +385,7 @@ function iniciarRodada(modo) {
 
     if (isMobileDevice()) {
       btnAbrirModal.innerText = "Condição";
-      
+      inicializarClickMove();
     } else {
       btnAbrirModal.innerText = "Mostrar Condição";
       inicializarArrastar();
