@@ -6,6 +6,9 @@
 body {
   font-family: "ArialRounded";
   background: radial-gradient(circle, #404040 30%, #333333 60%, #272727 100%);
+}
+
+main{
   display: flex;
   flex-direction: column;
   align-items: center;
