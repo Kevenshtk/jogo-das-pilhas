@@ -11,146 +11,213 @@
 </head>
 
 <body>
-  <img class="fundoE" src="public/assets/img/background/Esquerda.png" alt="imagem fundo esquerda">
-  <img class="fundoD" src="public/assets/img/background/Direita.png" alt="imagem fundo direita">
+  <main>
+    <img class="fundoE" src="public/assets/img/background/Esquerda.png" alt="imagem fundo esquerda">
+    <img class="fundoD" src="public/assets/img/background/Direita.png" alt="imagem fundo direita">
 
-  <audio id="player" src="public/assets/sounds/fundo.mpeg" loop="true" autoplay></audio>
+    <audio id="player" src="public/assets/sounds/fundo.mpeg" loop aria-label="Música de fundo do jogo"></audio>
 
-  <button class="btn-play-pause"><i class="fa-solid fa-pause"></i></button>
+    <button class="btn-play-pause" aria-label="Pausar ou retomar a música de fundo">
+      <i class="fa-solid fa-play"></i>
+    </button>
 
-  <section id="telaInicio" >
-    <h1>Jogo das Pilhas</h1>
+    <section id="telaInicio" aria-labelledby="tituloInicio">
+      <h1 id="tituloInicio">Jogo das Pilhas</h1>
 
-    <button class="btn btn-modo-jogo" onclick="iniciarJogo(1)">Descubra a Pilha</button>
-    <button class="btn btn-modo-jogo" onclick="iniciarJogo(2)">Monte a Pilha</button>
-    <button class="btn btn-manual" onclick="montarTelaManual()">Como Jogar?</button>
-  </section>
+      <nav aria-label="Modos de jogo">
+        <button class="btn btn-modo-jogo" onclick="iniciarJogo(1)">Descubra a Pilha</button>
+        <button class="btn btn-modo-jogo" onclick="iniciarJogo(2)">Monte a Pilha</button>
+        <button class="btn btn-manual" onclick="montarTelaManual()">Como Jogar?</button>
+      </nav>
+    </section>
 
-  <section id="telaDificuldade">
-    <button class="btn btn-voltar-inicio"><i class="fa-solid fa-chevron-left"></i></button>
-    
-    <h1 class="titulo"></h1>
-    <p class="instrucao">Selecione uma dificuldade!</p>
+    <section id="telaDificuldade" aria-labelledby="tituloDificuldade">
+      <nav aria-label="Menu superior">
+        <button class="btn btn-voltar-inicio" aria-label="Voltar para o menu inicial">
+          <i class="fa-solid fa-chevron-left"></i>
+        </button>
+      </nav>
 
-    <div class="btns-dificuldade">
-      <button id="nivel-0" onclick="salvarDificuldade(0)">LIVRE</button>
-      <button id="nivel-1" onclick="salvarDificuldade(1)">IGUAL</button>
-      <button id="nivel-2" onclick="salvarDificuldade(2)">MAIOR e MENOR</button>
-      <button id="nivel-3" onclick="salvarDificuldade(3)">E <br/>(igual)</button>
-      <button id="nivel-4" onclick="salvarDificuldade(4)">OU <br/>(igual) </button>
-      <button id="nivel-5" onclick="salvarDificuldade(5)">E, OU <br/>(Maior e Menor)</button>
-    </div>
+      <h1 id="tituloDificuldade" class="titulo"></h1>
+      <p class="instrucao">Selecione uma dificuldade!</p>
 
-    <div class="info">
-      <h2 class="info-titulo"></h2>
-      <p class="info-desc"></p>
-    </div>
-
-    <button class="btn btn-jogar">Jogar</button>
-  </section>
-
-  <section id="telaJogo">
-    <button class="btn btn-voltar-inicio"><i class="fa-solid fa-chevron-left"></i></button>
-    <button class="btn btn-info"><i class="fa-solid fa-info"></i></button>
-
-    <h1 class="titulo"></h1>
-    <p class="instrucao"></p>
-
-    <div class="container-pilhas">
-      <button class="btn-pilha-principal"><i class="fa-solid fa-chevron-left"></i></button>
-
-      <div id="principal" class="pilha"></div>
-      <div id="secundaria" class="pilha">
-        <img src="public/assets/img/formas/01.png" id="1" class="azul losango txt-branco continuo num-impar">
-        <img src="public/assets/img/formas/02.png" id="2" class="vermelho pentagono txt-branco potilhado num-par">
-        <img src="public/assets/img/formas/03.png" id="3" class="verde hexagono txt-branco continuo num-impar">
-        <img src="public/assets/img/formas/04.png" id="4" class="amarelo circulo txt-branco continuo num-par">
-        <img src="public/assets/img/formas/05.png" id="5" class="rosa quadrado txt-branco potilhado num-impar">
-        <img src="public/assets/img/formas/06.png" id="6" class="azul triangulo txt-preto potilhado num-par">
-        <img src="public/assets/img/formas/07.png" id="7" class="vermelho losango txt-preto continuo num-impar">
-        <img src="public/assets/img/formas/08.png" id="8" class="verde pentagono txt-preto continuo num-par">
-        <img src="public/assets/img/formas/09.png" id="9" class="amarelo hexagono txt-preto potilhado num-impar">
-        <img src="public/assets/img/formas/10.png" id="10" class="rosa circulo txt-preto continuo num-par">
-        <img src="public/assets/img/formas/11.png" id="11" class="azul quadrado txt-branco continuo num-impar">
-        <img src="public/assets/img/formas/12.png" id="12" class="vermelho triangulo txt-branco continuo num-par">
-        <img src="public/assets/img/formas/13.png" id="13" class="verde losango txt-branco potilhado num-impar">
-        <img src="public/assets/img/formas/14.png" id="14" class="amarelo pentagono txt-branco continuo num-par">
-        <img src="public/assets/img/formas/15.png" id="15" class="rosa hexagono txt-branco continuo num-impar">
-        <img src="public/assets/img/formas/16.png" id="16" class="azul circulo txt-preto continuo num-par">
-        <img src="public/assets/img/formas/17.png" id="17" class="vermelho quadrado txt-preto potilhado num-impar">
-        <img src="public/assets/img/formas/18.png" id="18" class="verde triangulo txt-preto continuo num-par">
-        <img src="public/assets/img/formas/19.png" id="19" class="amarelo losango txt-preto continuo num-impar">
-        <img src="public/assets/img/formas/20.png" id="20" class="rosa pentagono txt-preto potilhado num-par">
-        <img src="public/assets/img/formas/21.png" id="21" class="azul hexagono txt-branco potilhado num-impar">
-        <img src="public/assets/img/formas/22.png" id="22" class="vermelho circulo txt-branco continuo num-par">
-        <img src="public/assets/img/formas/23.png" id="23" class="verde quadrado txt-branco continuo num-impar">
-        <img src="public/assets/img/formas/24.png" id="24" class="amarelo triangulo txt-branco potilhado num-par">
-        <img src="public/assets/img/formas/25.png" id="25" class="rosa losango txt-branco continuo num-impar">
-        <img src="public/assets/img/formas/26.png" id="26" class="azul pentagono txt-preto continuo num-par">
-        <img src="public/assets/img/formas/27.png" id="27" class="vermelho hexagono txt-preto continuo num-impar">
-        <img src="public/assets/img/formas/28.png" id="28" class="verde circulo txt-preto potilhado num-par">
-        <img src="public/assets/img/formas/29.png" id="29" class="amarelo quadrado txt-preto continuo num-impar">
-        <img src="public/assets/img/formas/30.png" id="30" class="rosa triangulo txt-preto continuo num-par">
+      <div class="btns-dificuldade">
+        <button id="nivel-0" onclick="salvarDificuldade(0)">LIVRE</button>
+        <button id="nivel-1" onclick="salvarDificuldade(1)">IGUAL</button>
+        <button id="nivel-2" onclick="salvarDificuldade(2)">MAIOR e MENOR</button>
+        <button id="nivel-3" onclick="salvarDificuldade(3)">E <br />(igual)</button>
+        <button id="nivel-4" onclick="salvarDificuldade(4)">OU <br />(igual) </button>
+        <button id="nivel-5" onclick="salvarDificuldade(5)">E, OU <br />(Maior e Menor)</button>
       </div>
 
-      <span class="tag-pilha"></span>
-      <button class="btn-pilha-secundaria"><i class="fa-solid fa-chevron-right"></i></button>
-    </div>
+      <div class="info" aria-live="polite">
+        <h2 class="info-titulo"></h2>
+        <p class="info-desc"></p>
+      </div>
 
-    <button class="btn btn-responder"></button>
-    <button class="btn-abrir-modal"></button>
+      <nav aria-label="Iniciar jogo">
+        <button class="btn btn-jogar">Jogar</button>
+      </nav>
+    </section>
 
-    <div id="modal" class="modal">
-      <div class="modal-content">
-        <span class="btn-fechar-modal">&times;</span>
-        <div class="modal-condicao">
-          <h2 class="modal-titulo"></h2>
-          <div class="alternativas"></div>
+    <section id="telaJogo" aria-labelledby="tituloJogo">
+      <nav aria-label="Menu superior">
+        <button class="btn btn-voltar-inicio" aria-label="Voltar para o menu inicial">
+          <i class="fa-solid fa-chevron-left"></i>
+        </button>
+      </nav>
+
+      <button class="btn btn-info" aria-label="Abrir instruções do jogo">
+        <i class="fa-solid fa-info"></i>
+      </button>
+
+      <h1 id="tituloJogo" class="titulo"></h1>
+      <p class="instrucao"></p>
+
+      <div class="container-pilhas">
+        <nav aria-label="Mover para a pilha principal">
+          <button class="btn-pilha-principal" aria-label="Ir para pilha principal">
+            <i class="fa-solid fa-chevron-left"></i>
+          </button>
+        </nav>
+
+        <span class="tag-pilha" aria-live="polite"></span>
+        <div id="principal" class="pilha"></div>
+        <div id="secundaria" class="pilha">
+          <img src="public/assets/img/formas/01.png" id="1" class="azul losango txt-branco continuo num-impar"
+            alt="Figura número 1: losango azul, texto branco e linha contínua">
+          <img src="public/assets/img/formas/02.png" id="2" class="vermelho pentagono txt-branco potilhado num-par"
+            alt="Figura número 2: pentágono vermelho, texto branco e linha pontilhada">
+          <img src="public/assets/img/formas/03.png" id="3" class="verde hexagono txt-branco continuo num-impar"
+            alt="Figura número 3: hexágono verde, texto branco e linha contínua">
+          <img src="public/assets/img/formas/04.png" id="4" class="amarelo circulo txt-branco continuo num-par"
+            alt="Figura número 4: círculo amarelo, texto branco e linha contínua">
+          <img src="public/assets/img/formas/05.png" id="5" class="rosa quadrado txt-branco potilhado num-impar"
+            alt="Figura número 5: quadrado rosa, texto branco e linha pontilhada">
+          <img src="public/assets/img/formas/06.png" id="6" class="azul triangulo txt-preto potilhado num-par"
+            alt="Figura número 6: triângulo azul, texto preto e linha pontilhada">
+          <img src="public/assets/img/formas/07.png" id="7" class="vermelho losango txt-preto continuo num-impar"
+            alt="Figura número 7: losango vermelho, texto preto e linha contínua">
+          <img src="public/assets/img/formas/08.png" id="8" class="verde pentagono txt-preto continuo num-par"
+            alt="Figura número 8: pentágono verde, texto preto e linha contínua">
+          <img src="public/assets/img/formas/09.png" id="9" class="amarelo hexagono txt-preto potilhado num-impar"
+            alt="Figura número 9: hexágono amarelo, texto preto e linha pontilhada">
+          <img src="public/assets/img/formas/10.png" id="10" class="rosa circulo txt-preto continuo num-par"
+            alt="Figura número 10: círculo rosa, texto preto e linha contínua">
+          <img src="public/assets/img/formas/11.png" id="11" class="azul quadrado txt-branco continuo num-impar"
+            alt="Figura número 11: quadrado azul, texto branco e linha contínua">
+          <img src="public/assets/img/formas/12.png" id="12" class="vermelho triangulo txt-branco continuo num-par"
+            alt="Figura número 12: triângulo vermelho, texto branco e linha contínua">
+          <img src="public/assets/img/formas/13.png" id="13" class="verde losango txt-branco potilhado num-impar"
+            alt="Figura número 13: losango verde, texto branco e linha pontilhada">
+          <img src="public/assets/img/formas/14.png" id="14" class="amarelo pentagono txt-branco continuo num-par"
+            alt="Figura número 14: pentágono amarelo, texto branco e linha contínua">
+          <img src="public/assets/img/formas/15.png" id="15" class="rosa hexagono txt-branco continuo num-impar"
+            alt="Figura número 15: hexágono rosa, texto branco e linha contínua">
+          <img src="public/assets/img/formas/16.png" id="16" class="azul circulo txt-preto continuo num-par"
+            alt="Figura número 16: círculo azul, texto preto e linha contínua">
+          <img src="public/assets/img/formas/17.png" id="17" class="vermelho quadrado txt-preto potilhado num-impar"
+            alt="Figura número 17: quadrado vermelho, texto preto e linha pontilhada">
+          <img src="public/assets/img/formas/18.png" id="18" class="verde triangulo txt-preto continuo num-par"
+            alt="Figura número 18: triângulo verde, texto preto e linha contínua">
+          <img src="public/assets/img/formas/19.png" id="19" class="amarelo losango txt-preto continuo num-impar"
+            alt="Figura número 19: losango amarelo, texto preto e linha contínua">
+          <img src="public/assets/img/formas/20.png" id="20" class="rosa pentagono txt-preto potilhado num-par"
+            alt="Figura número 20: pentágono rosa, texto preto e linha pontilhada">
+          <img src="public/assets/img/formas/21.png" id="21" class="azul hexagono txt-branco potilhado num-impar"
+            alt="Figura número 21: hexágono azul, texto branco e linha pontilhada">
+          <img src="public/assets/img/formas/22.png" id="22" class="vermelho circulo txt-branco continuo num-par"
+            alt="Figura número 22: círculo vermelho, texto branco e linha contínua">
+          <img src="public/assets/img/formas/23.png" id="23" class="verde quadrado txt-branco continuo num-impar"
+            alt="Figura número 23: quadrado verde, texto branco e linha contínua">
+          <img src="public/assets/img/formas/24.png" id="24" class="amarelo triangulo txt-branco potilhado num-par"
+            alt="Figura número 24: triângulo amarelo, texto branco e linha pontilhada">
+          <img src="public/assets/img/formas/25.png" id="25" class="rosa losango txt-branco continuo num-impar"
+            alt="Figura número 25: losango rosa, texto branco e linha contínua">
+          <img src="public/assets/img/formas/26.png" id="26" class="azul pentagono txt-preto continuo num-par"
+            alt="Figura número 26: pentágono azul, texto preto e linha contínua">
+          <img src="public/assets/img/formas/27.png" id="27" class="vermelho hexagono txt-preto continuo num-impar"
+            alt="Figura número 27: hexágono vermelho, texto preto e linha contínua">
+          <img src="public/assets/img/formas/28.png" id="28" class="verde circulo txt-preto potilhado num-par"
+            alt="Figura número 28: círculo verde, texto preto e linha pontilhada">
+          <img src="public/assets/img/formas/29.png" id="29" class="amarelo quadrado txt-preto continuo num-impar"
+            alt="Figura número 29: quadrado amarelo, texto preto e linha contínua">
+          <img src="public/assets/img/formas/30.png" id="30" class="rosa triangulo txt-preto continuo num-par"
+            alt="Figura número 30: triângulo rosa, texto preto e linha contínua">
         </div>
 
-        <div class="modal-manual">
-          <h2 class="modal-titulo"></h2>
-          <ul>
-          </ul>
-        </div>
+        <nav aria-label="Mover para a pilha secundária">
+          <button class="btn-pilha-secundaria" aria-label="Ir para pilha secundária">
+            <i class="fa-solid fa-chevron-right"></i>
+          </button>
+        </nav>
       </div>
-    </div>
-  </section>
 
-  <section id="telaManual">
-    <button class="btn btn-voltar-inicio"><i class="fa-solid fa-chevron-left"></i></button>
-    <h1 class="titulo">Jogo das Pilhas</h1>
-    <p class="instrucao">O jogo tem 30 figuras únicas, cada uma com características diferentes
-      (cor, forma, número, cor da escrita e sublinhado). Existem dois modos
-      de jogar:
-    </p>
-    <section>
-      <div id="descubra">
-        <h2>DESCUBRA A PILHA</h2>
-        <ul>
-          <li>As figuras são separadas em duas pilhas:
-            <li class="decoracao">Pilha da esquerda: segue uma lógica secreta.</li>
-            <li class="decoracao">Pilha da direita: são as figuras que não seguem essa lógica</li>
-          </li>
-          <li>Seu objetivo é descobrir qual foi a regra usada para montar a pilha da
-            esquerda.</li>
-          <li>Quando achar que sabe a resposta, clique em Responder: vão
-            aparecer 4 opções de lógica para escolher.</li>
-          <li>Se errar, pode tentar de novo até acertar.</li>
-        </ul>
-      </div>
-      <div id="monte">
-        <h2>MONTE A PILHA</h2>
-        <ul>
-          <li>Todas as 30 figuras começam na pilha da direita.</li>
-          <li>Uma lógica será revelada para você, e seu desafio é mover para a
-            pilha da esquerda todas as figuras que seguem essa regra.</li>
-          <li>Quando terminar, clique em Verificar para conferir se acertou.</li>
-          <li>Caso tenha errado, pode ajustar e tentar novamente até completar.</li>
-        </ul>
+      <button class="btn btn-responder"></button>
+      <button class="btn-abrir-modal"></button>
+
+      <div id="modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitulo">
+        <div class="modal-content">
+          <button class="btn-fechar-modal" aria-label="Fechar janela">&times;</button>
+          <div class="modal-condicao">
+            <h2 id="modalTitulo" class="modal-titulo"></h2>
+            <div class="alternativas"></div>
+          </div>
+
+          <div class="modal-manual">
+            <h2 id="modalTitulo" class="modal-titulo"></h2>
+            <ul>
+            </ul>
+          </div>
+        </div>
       </div>
     </section>
-  </section>
+
+    <section id="telaManual" aria-labelledby="tituloManual">
+      <nav aria-label="Menu superior">
+        <button class="btn btn-voltar-inicio" aria-label="Voltar para o menu inicial">
+          <i class="fa-solid fa-chevron-left"></i>
+        </button>
+      </nav>
+
+      <h1 id="tituloManual" class="titulo">Jogo das Pilhas</h1>
+      <p class="instrucao">O jogo tem 30 figuras únicas, cada uma com características diferentes
+        (cor, forma, número, cor da escrita e sublinhado). Existem dois modos
+        de jogar:
+      </p>
+      <section class="info-modos">
+        <div id="descubra" aria-labelledby="tituloDescubra">
+          <h2 id="tituloDescubra">DESCUBRA A PILHA</h2>
+
+          <ul>
+            <li>As figuras são separadas em duas pilhas:
+            <ul class="sub-lista">
+              <li class="decoracao">Pilha da esquerda: segue uma lógica secreta.</li>
+              <li class="decoracao">Pilha da direita: são as figuras que não seguem essa lógica</li>
+            </ul>
+            </li>
+            <li>Seu objetivo é descobrir qual foi a regra usada para montar a pilha da
+              esquerda.</li>
+            <li>Quando achar que sabe a resposta, clique em Responder: vão
+              aparecer 4 opções de lógica para escolher.</li>
+            <li>Se errar, pode tentar de novo até acertar.</li>
+          </ul>
+        </div>
+
+        <div id="monte" aria-labelledby="tituloMonte">
+          <h2 id="tituloMonte">MONTE A PILHA</h2>
+
+          <ul>
+            <li>Todas as 30 figuras começam na pilha da direita.</li>
+            <li>Uma lógica será revelada para você, e seu desafio é mover para a
+              pilha da esquerda todas as figuras que seguem essa regra.</li>
+            <li>Quando terminar, clique em Verificar para conferir se acertou.</li>
+            <li>Caso tenha errado, pode ajustar e tentar novamente até completar.</li>
+          </ul>
+        </div>
+      </section>
+    </section>
+  </main>
 
   <script type="module" src="public/js/index.js"></script>
 </body>

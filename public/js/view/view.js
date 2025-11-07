@@ -97,7 +97,7 @@ function montarTelaManual() {
   const tela = document.getElementById("telaManual");
   tela.style.display = "flex";
 
-  const btnVoltar = document.querySelector("#telaManual > .btn-voltar-inicio");
+  const btnVoltar = document.querySelector("#telaManual > nav > .btn-voltar-inicio");
   btnVoltar.onclick = voltarInicio;
 }
 
@@ -109,7 +109,7 @@ function montarTelaDificuldade(modo) {
   titulo.textContent = modo === 1 ? "Descubra a Pilha" : "Monte a Pilha";
 
   const btnVoltar = document.querySelector(
-    "#telaDificuldade > .btn-voltar-inicio"
+    "#telaDificuldade > nav > .btn-voltar-inicio"
   );
   btnVoltar.onclick = voltarInicio;
 }
@@ -280,7 +280,7 @@ function montarTelaJogo(modo) {
 
   const titulo = document.querySelector("#telaJogo > .titulo");
   const instrucao = document.querySelector("#telaJogo > .instrucao");
-  const btnVoltar = document.querySelector("#telaJogo > .btn-voltar-inicio");
+  const btnVoltar = document.querySelector("#telaJogo > nav> .btn-voltar-inicio");
   const btnInfo = document.querySelector("#telaJogo > .btn-info");
   const btn = document.querySelector("#telaJogo > .btn-responder");
 

@@ -18,7 +18,7 @@ function iniciarJogo(modo) {
   setMododejogo(modo);
   montarTelaDificuldade(modo);
 
-  const btnJogar = document.querySelector("#telaDificuldade > .btn-jogar");
+  const btnJogar = document.querySelector("#telaDificuldade > nav >  .btn-jogar");
   btnJogar.onclick = () => {
     esconderTela("telaDificuldade");
     montarTelaJogo(modo);
