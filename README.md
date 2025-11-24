@@ -25,7 +25,7 @@ O jogo trabalha com 30 figuras geométricas que variam entre:
 
 Com base nesses atributos, o aluno deve descobrir ou montar pilhas seguindo regras lógicas predefinidas.
 
-[Artigo Fatec]()
+[Artigo Fatec](https://kevenshtk.github.io/jogo-das-pilhas/public/assets/docs/artigo.pdf)
 
 ## Tecnologias Utilizadas
 
@@ -33,10 +33,10 @@ Com base nesses atributos, o aluno deve descobrir ou montar pilhas seguindo regr
 
 ## Telas
 ### Tela Inicial
-![Tela Inicial]()
+![Tela Inicial](https://kevenshtk.github.io/jogo-das-pilhas/public/assets/img/telas/telaInicial.png)
 
 ### Tela de Jogo
-![Tela de Jogo]()
+![Tela de Jogo](https://kevenshtk.github.io/jogo-das-pilhas/public/assets/img/telas/telaJogoDescubraPilha.png)
 
 ## Funcionalidades
 1. Descubra a Pilha
