@@ -202,6 +202,7 @@
               aparecer 4 opções de lógica para escolher.</li>
             <li>Se errar, pode tentar de novo até acertar.</li>
           </ul>
+          <button class="btn btn-video" onclick="abrirVideo('public/assets/videos/descruba.mp4')">Ver Vídeo</button>
         </div>
 
         <div id="monte" aria-labelledby="tituloMonte">
@@ -214,9 +215,20 @@
             <li>Quando terminar, clique em Verificar para conferir se acertou.</li>
             <li>Caso tenha errado, pode ajustar e tentar novamente até completar.</li>
           </ul>
+          <button class="btn btn-video" onclick="abrirVideo('public/assets/videos/monte.mp4')">Ver Vídeo</button>
         </div>
       </section>
     </section>
+
+    <div id="modalVideo" class="modal-video" role="dialog" aria-modal="true" aria-labelledby="modalVideoTitulo">
+      <div class="modal-video-content">
+        <button class="btn-fechar-video" aria-label="Fechar vídeo" onclick="fecharVideo()">&times;</button>
+        <video id="playerVideo" controls>
+          <source id="videoSource" src="" type="video/mp4">
+          Seu navegador não suporta a tag de vídeo.
+        </video>
+      </div>
+    </div>
   </main>
 
   <script type="module" src="public/js/index.js"></script>

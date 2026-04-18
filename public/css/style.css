@@ -339,6 +339,10 @@ img.dragging {
   max-width: 500px;
 }
 
+#descubra{
+  margin-bottom: 50px;
+}
+
 #descubra h2,
 #monte h2 {
   text-align: center;
@@ -408,4 +412,56 @@ img.dragging {
   font-size: 16px;
   font-style: italic;
   margin: 50px 0;
+}
+
+.modal-video {
+  display: none;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(8px);
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 2000;
+}
+
+.modal-video-content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80%;
+  max-width: 800px;
+}
+
+.btn-fechar-video {
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 50px;
+  cursor: pointer;
+  position: absolute;
+  top: -50px;
+  right: -30px;
+  transition: color 0.3s;
+}
+
+.btn-fechar-video:hover {
+  color: #ff4c4c;
+}
+
+#playerVideo {
+  width: 100%;
+  border-radius: 15px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.8);
+}
+
+.btn-video {
+  margin-top: 20px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
