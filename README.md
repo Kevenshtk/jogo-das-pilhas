@@ -1,68 +1,122 @@
-# Jogo das Pilhas
+# 🎮 Jogo das Pilhas
 
-## Índice
+O projeto foi desenvolvido durante o curso de Análise e Desenvolvimento de Sistemas como parte de uma pesquisa voltada ao ensino de lógica de programação para adolescentes.
 
-- [Sobre o Projeto](#sobre-o-projeto)
-- [Tecnologias Utilizadas](#tecnologias-utilizadas)
-- [Funcionalidades](#funcionalidades)
-- [Instalação](#instalação)
+Além da implementação da aplicação web, o projeto serviu como ferramenta de pesquisa para um artigo científico, sendo utilizado para avaliar uma abordagem lúdica no processo de aprendizagem de conceitos fundamentais de programação.
 
-## Sobre o Projeto
+🔗[Acessar aplicação](https://kevenshtk.github.io/jogo-das-pilhas/)
 
-O **Jogo das Pilhas** é uma aplicação web educativa desenvolvida para apoiar o ensino de lógica de programação para adolescentes. Ele foi pensado para tornar o aprendizado mais acessível, interativo e lúdico, reduzindo a dificuldade inicial comum nessa disciplina.
+## 🎯 Objetivos
 
-Baseado em dois modos de jogo — Descubra a Pilha e Monte a Pilha — o projeto utiliza figuras geométricas e regras lógicas para estimular o raciocínio lógico, o entendimento de condições, operadores lógicos, comparações, e classificação de padrões.
+O objetivo do projeto foi desenvolver uma ferramenta educacional para apoiar o ensino de lógica de programação por meio da gamificação, aplicando conceitos como:
 
-O objetivo é auxiliar professores e alunos na compreensão de conteúdos abstratos por meio de uma ferramenta digital simples, dinâmica e de fácil acesso.
+- Desenvolvimento Web com HTML, CSS e JavaScript;
+- Manipulação do DOM;
+- Eventos e Drag and Drop;
+- Lógica de programação;
+- Acessibilidade com HTML semântico e ARIA;
+- Design de interfaces educacionais;
+- Desenvolvimento de software voltado ao ensino.
 
-O jogo trabalha com 30 figuras geométricas que variam entre:
+## 📄 Artigo Científico
 
-- Cor
-- Forma
-- Número
-- Cor da escrita
-- Tipo de sublinhado
+O desenvolvimento do Jogo das Pilhas serviu como base para uma pesquisa voltada ao ensino de lógica de programação, resultando na publicação de um artigo científico que apresenta a proposta da ferramenta, sua metodologia e os resultados obtidos durante sua utilização.
 
-Com base nesses atributos, o aluno deve descobrir ou montar pilhas seguindo regras lógicas predefinidas.
+🔗[Artigo Publicado](https://kevenshtk.github.io/jogo-das-pilhas/public/assets/docs/artigo.pdf)
 
-[Artigo Fatec](https://kevenshtk.github.io/jogo-das-pilhas/public/assets/docs/artigo.pdf)
+## 📷 Demonstração
 
-## Tecnologias Utilizadas
-
-<img align="center" src="https://skillicons.dev/icons?i=html,css,js,nodejs" alt="icons"/>
-
-## Telas
 ### Tela Inicial
 ![Tela Inicial](https://kevenshtk.github.io/jogo-das-pilhas/public/assets/img/telas/telaInicial.png)
 
 ### Tela de Jogo
 ![Tela de Jogo](https://kevenshtk.github.io/jogo-das-pilhas/public/assets/img/telas/telaJogoDescubraPilha.png)
 
-## Funcionalidades
-1. Descubra a Pilha
- - O sistema separa automaticamente as figuras em duas pilhas.
- - O jogador deve descobrir a lógica usada.
- - São oferecidas quatro alternativas (uma correta e três incorretas).
- - Tentativas ilimitadas até acerto.
+## ✨ Funcionalidades
 
-2. Monte a Pilha
- - Todas as figuras começam na pilha da direita.
- - O jogador deve mover manualmente apenas as figuras que atendem à lógica apresentada.
- - Após separar, o botão Verificar analisa se a solução está correta.
+### Descubra a Pilha
 
-3. Outros destaques
- - 344 lógicas diferentes possíveis.
- - Sistema de dificuldades (do simples ao avançado).
- - Interface acessível com HTML semântico e atributos ARIA.
- - Drag and drop totalmente funcional.
- - Design minimalista e intuitivo.
+- Separação automática das figuras em duas pilhas.
+- Geração de alternativas para identificação da regra lógica.
+- Validação das respostas.
+- Feedback imediato ao jogador.
 
-## Instalação
+### Monte a Pilha
+
+- Organização manual das figuras utilizando drag and drop.
+- Verificação automática da solução.
+- Correção baseada na lógica selecionada.
+
+### Sistema
+
+- 344 combinações lógicas.
+- Sistema de níveis de dificuldade.
+- Interface responsiva.
+- HTML semântico.
+- Acessibilidade com ARIA.
+
+
+## 🛠️ Tecnologias
+
+<img align="center" src="https://skillicons.dev/icons?i=html,css,js" alt="icons"/>
+
+## 📁 Estrutura
+
+### 🏛️ Arquitetura
+O projeto foi organizado seguindo o padrão arquitetural MVC (Model-View-Controller), separando as responsabilidades entre Model, View e Controller, o que torna o código mais organizado, facilita a manutenção e contribui para sua evolução.
+
+```
+public/
+├── assets/
+│   ├── docs/
+│   ├── font/
+│   ├── img/
+│   ├── sounds/
+│   └── videos/
+├── css/
+└── js/
+    ├── controller/
+    ├── model/
+    ├── view/
+    └── utils/
+```
+
+### 📦 assets/
+Reúne os recursos estáticos utilizados pela aplicação.
+
+- **docs/** → Documentação do projeto e artigo científico.
+- **font/**  → Fontes utilizadas pela aplicação.
+- **img/** → Imagens das telas, figuras do jogo e demais recursos visuais.
+- **sounds/** → Efeitos sonoros utilizados durante a interação.
+- **videos/** → Vídeos tutoriais integrados ao jogo.
+
+### 🎨 css/
+Arquivos responsáveis pela estilização da aplicação.
+
+### ⚙️ js/
+Agrupa os módulos JavaScript organizados conforme a arquitetura MVC.
+
+- **controller/** → Controla o fluxo da aplicação, intermediando a comunicação entre a interface e a lógica de negócio.
+- **model/** → Contém os dados e as regras de negócio do jogo.
+- **view/** → Responsável pela manipulação da interface e atualização dos elementos da página.
+- **utils/** → Reúne funções utilitárias compartilhadas entre os módulos da aplicação.
+
+## ⭐ Destaques
+
+- Ferramenta utilizada como base para uma pesquisa acadêmica, resultando na publicação de um artigo científico.
+- Aplicação dos conceitos de gamificação para apoiar o ensino de lógica de programação.
+- Organização do código utilizando a arquitetura MVC em JavaScript.
+- 344 combinações lógicas para geração de desafios.
+- Sistema com diferentes níveis de dificuldade.
+- Interface acessível utilizando HTML semântico e atributos ARIA.
+- Recurso de drag and drop para interação com as figuras.
+- Vídeos tutoriais integrados para auxiliar os usuários durante a utilização do jogo.
+
+## 🚀 Instalação
 
 1. Clone o repositório:
-   ```terminal
+   ```bash
    git clone https://github.com/Kevenshtk/jogo-das-pilhas.git
    
 2. Abra a pasta no VS Code e inicie com o Live Server:  
-   Atalho: Alt+L, depois Alt+O
-
+   > Atalho: Alt+L, depois Alt+O
